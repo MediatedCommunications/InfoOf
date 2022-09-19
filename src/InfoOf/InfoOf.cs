@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-using System.Reflection.Emit;
-
-namespace System.Reflection {
+﻿namespace System.Reflection {
 
     public static class InfoOf {
         public static TypeAccessor Type(Type Type) {

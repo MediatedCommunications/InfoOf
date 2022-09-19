@@ -1,7 +1,4 @@
-﻿using System;
-using System.Reflection;
-
-namespace System.Reflection {
+﻿namespace System.Reflection {
     public class PropertyAccessor {
         public Type EntityType { get; }
         public Type PropertyType { get; }
