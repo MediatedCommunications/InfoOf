@@ -9,7 +9,7 @@
         public virtual PropertyAccessor Property(string Name) {
             var Prop = EntityType.GetProperty(Name, BindingFlags.FlattenHierarchy | BindingFlags.IgnoreCase | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
 
-            if(Prop is null) {
+            if (Prop is null) {
                 throw new Exception("Unable to find property");
             }
 
@@ -38,9 +38,9 @@
     }
 
 
-    
 
-        
+
+
 
 
 }

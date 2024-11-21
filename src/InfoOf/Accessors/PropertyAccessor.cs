@@ -8,7 +8,7 @@
 
             var DeclaringType = Property.DeclaringType;
 
-            if(DeclaringType is null) {
+            if (DeclaringType is null) {
                 throw new Exception();
             }
 
@@ -24,7 +24,7 @@
 
             this.Property = Property;
             this.PropertyType = Property.PropertyType;
-            
+
         }
     }
 

@@ -16,7 +16,7 @@ namespace System.Reflection {
 
             return ret;
         }
-        
+
         public static Action<object, object?> ObjectSetter(this FieldAccessor This) {
             var Method = This.Field;
 
@@ -26,7 +26,7 @@ namespace System.Reflection {
             var Argument = Expression.Parameter(typeof(object), "a");
             var ArgumentCast = Expression.Convert(Argument, This.FieldType);
 
-            var SetterCall = Expression.Assign(Expression.Field(InstanceCast,Method), ArgumentCast);
+            var SetterCall = Expression.Assign(Expression.Field(InstanceCast, Method), ArgumentCast);
             var tret = Expression.Lambda<Action<object, object?>>(SetterCall, Instance, Argument).Compile();
             var ret = tret;
 
@@ -65,7 +65,7 @@ namespace System.Reflection {
 
         public static Func<TEntity, TField> ValueGetter<TEntity, TField>(this FieldAccessor<TEntity, TField> This) {
             var Method = This.Field;
-            
+
             var Instance = Expression.Parameter(typeof(TEntity), "i");
 
             var GetterCall = Expression.Field(Instance, Method);

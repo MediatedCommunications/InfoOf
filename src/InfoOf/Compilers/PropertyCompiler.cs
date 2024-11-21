@@ -19,7 +19,7 @@ namespace System.Reflection {
 
             return ret;
         }
-        
+
         public static Action<object, object?> ObjectSetter(this PropertyAccessor This) {
             var Method = This.Property.GetSetMethod(true);
             if (Method is null) {
@@ -77,10 +77,10 @@ namespace System.Reflection {
 
         public static Func<TEntity, TProperty> ValueGetter<TEntity, TProperty>(this PropertyAccessor<TEntity, TProperty> This) {
             var Method = This.Property.GetGetMethod(true);
-            if(Method is null) {
+            if (Method is null) {
                 throw new ArgumentException("Unable to find getter");
             }
-            
+
             var Instance = Expression.Parameter(typeof(TEntity), "i");
 
             var GetterCall = Expression.Call(Instance, Method);
